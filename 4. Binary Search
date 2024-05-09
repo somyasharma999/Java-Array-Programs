@@ -1,0 +1,34 @@
+//Binary Search is a searching algorithm for finding an element's position in a sorted array.
+//In this approach, the element is always searched in the middle of a portion of an array.
+
+public class array{
+   public static int binarySearch (int numbers[], int key){
+        int start=0, end= numbers.length-1;
+        while (start<=end) {
+            int mid =(start+end)/2;
+            if (numbers[mid] == key) {
+                return mid;
+            }
+            else if (numbers[mid]<key) {            //right 2nd half
+                start = mid +1;                
+            }
+            else{
+                end = mid-1;                       //left 1st half
+            }
+        }
+        return -1;
+    }
+    public static void main (String []args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the key you want to search : ");
+        int numbers[] = {2,4,6,8,10,12,14,16,};
+        int key = sc.nextInt();
+        int index = binarySearch(numbers, key);
+        if (index == -1) {
+            System.out.println("The key is not found");
+        }
+        else{
+            System.out.println("The key is at index : " + index);
+        }
+    }
+}
