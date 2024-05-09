@@ -11,6 +11,6 @@ public class array{
     }
     public static void main (String []args){
         int numbers[] = {2,4,6,8,10,12,15,65};
-        System.out.println("largest value is : " + getSmallest(numbers));
+        System.out.println("Smallest value is : " + getSmallest(numbers));
     }
 }
